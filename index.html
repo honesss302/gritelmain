@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ГриТел - Логистические решения для партнеров</title>
+  <link rel="stylesheet" href="indexx.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="logo.png" alt="ГриТел Логотип" />
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="partners.html">Партнерам</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header__auth">
+          <div id="auth-buttons">
+            <a href="login.html" class="btn btn-login">Вход для партнеров</a>
+            <a href="registr.html" class="btn btn-register">Регистрация</a>
+          </div>
+          <div id="user-profile" style="display: none;">
+            <a href="profile.html" class="btn btn-profile">Профиль</a>
+            <button class="btn btn-logout" onclick="logout()">Выйти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1>Оптимизация логистики с ГриТел</h1>
+                <p>Современные решения для эффективного взаимодействия с партнерами</p>
+                <div class="hero__buttons">
+                    <a href="become-partner.html" class="btn btn-primary">Стать партнером</a>
+                    <a href="partners.html" class="btn btn-secondary">Узнать больше</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="hero-image.png" alt="Логистика ГриТел">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Наши преимущества для партнеров</h2>
+            <div class="features__grid">
+                <div class="feature">
+                    <img src="icon-track (2).png" alt="Отслеживание">
+                    <h3>Онлайн-отслеживание</h3>
+                    <p>Реальное время отслеживания грузов через личный кабинет</p>
+                </div>
+                <div class="feature">
+                    <img src="icon-analytics.png" alt="Аналитика">
+                    <h3>Детальная аналитика</h3>
+                    <p>Полная статистика и отчетность по всем перевозкам</p>
+                </div>
+                <div class="feature">
+                    <img src="icon-api.jpg" alt="Интеграция">
+                    <h3>API интеграция</h3>
+                    <p>Готовые решения для подключения к вашей системе</p>
+                </div>
+                <div class="feature">
+                    <img src="icon-support.png" alt="Поддержка">
+                    <h3>Персональный менеджер</h3>
+                    <p>Индивидуальный подход к каждому партнеру</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="container">
+            <h2>Наши партнеры</h2>
+            <div class="partners__logos">
+                <img src="partner1.jpg" alt="Партнер 1">
+                <img src="partner2.jpg" alt="Партнер 2">
+                <img src="partner3.webp" alt="Партнер 3">
+                <img src="partner4.webp" alt="Партнер 4">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Готовы к сотрудничеству?</h2>
+                <p>Присоединяйтесь к нашей партнерской сети и получите доступ к современным логистическим решениям</p>
+                <a href="become-partner.html" class="btn btn-primary">Начать работу</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <img src="logo-white.png" alt="ГриТел Логотип" class="footer__logo" width="42px" height="64px">
+                    <p>© 2025 ГриТел. Все права защищены.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Контакты</h4>
+                    <p>info@gritel.com</p>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>г. Рязань, пр-кт Славянский, д. 5</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Для партнеров</h4>
+                    <ul>
+
+                        <li><a href="support.html">Поддержка</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        if (document.cookie.includes('user_id') && !localStorage.getItem('loggedIn')) {
+            localStorage.setItem('loggedIn', 'true');
+            window.location.reload(); 
+        }
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+            document.getElementById('auth-buttons').style.display = isLoggedIn ? 'none' : 'block';
+            document.getElementById('user-profile').style.display = isLoggedIn ? 'block' : 'none';
+        });
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.reload();
+        }
+    </script>
+     <script>
+        function getCookie(name) {
+          const matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([$?*|{}()\[\]\\\/+^])/g, '\\$1') + "=([^;]*)"));
+          return matches ? decodeURIComponent(matches[1]) : null;
+        }
+    
+        function logout() {
+          document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.cookie = "user_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          location.reload();
+        }
+    
+        window.addEventListener('DOMContentLoaded', () => {
+          const userLogin = getCookie('user_login');
+    
+          if (userLogin) {
+            document.getElementById('auth-buttons').style.display = 'none';
+            document.getElementById('user-profile').style.display = 'block';
+            document.querySelector('.btn-profile').textContent = `Профиль (${userLogin})`;
+          } else {
+            document.getElementById('auth-buttons').style.display = 'block';
+            document.getElementById('user-profile').style.display = 'none';
+          }
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | ГриТел</title>
+    <link rel="stylesheet" href="indexx.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="logo.png" alt="ГриТел Логотип">
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="partners.html">Партнерам</a></li>
+                        <li><a href="contacts.html" class="active">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__auth">
+                    <a href="login.html" class="btn btn-login">Вход для партнеров</a>
+                    <a href="registr.html" class="btn btn-register">Регистрация</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contacts-hero">
+        <div class="container">
+            <h1>Наши контакты</h1>
+            <p>Свяжитесь с нами любым удобным способом</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Адрес</h3>
+                    <p>г. Рязань, пр-кт Славянский, д. 5<br></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Телефоны</h3>
+                    <p>Общий: +7 (495) 123-45-67<br>Партнерский отдел: +7 (495) 123-45-68</p>
+                    <a href="#" onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })" class="btn btn-outline">Заказать звонок</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Электронная почта</h3>
+                    <p>Общий: info@gritel.com<br>Партнерский отдел: partners@gritel.com</p>
+                    <a href="#"  onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })" class="btn btn-outline">Написать письмо</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: выходной</p>
+                    <a href="#" onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })" class="btn btn-outline">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-map">
+        <div class="container">
+            <h2>Мы на карте</h2>
+            <div class="map-container">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-departments">
+        <div class="container">
+            <h2>Контактные лица</h2>
+            <div class="departments-grid">
+                <div class="department">
+                    <h3><i class="fas fa-users"></i> Отдел по работе с партнерами</h3>
+                    <div class="employees">
+                        <div class="employee">
+                            <img src="employee1.jpg" alt="Иван Сидоров">
+                            <div class="employee-info">
+                                <h4>Иван Сидоров</h4>
+                                <p>Руководитель отдела</p>
+                                <p><i class="fas fa-phone"></i> +7 (495) 123-45-68 (доб. 101)</p>
+                                <p><i class="fas fa-envelope"></i> i.sidorov@gritel.com</p>
+                            </div>
+                        </div>
+                        <div class="employee">
+                            <img src="employee3.png" alt="Елена Петрова">
+                            <div class="employee-info">
+                                <h4>Елена Петрова</h4>
+                                <p>Менеджер по работе с партнерами</p>
+                                <p><i class="fas fa-phone"></i> +7 (495) 123-45-68 (доб. 102)</p>
+                                <p><i class="fas fa-envelope"></i> e.petrova@gritel.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department">
+                    <h3><i class="fas fa-headset"></i> Служба поддержки</h3>
+                    <div class="employees">
+                        <div class="employee">
+                            <img src="employee2.jpg" alt="Алексей Иванов">
+                            <div class="employee-info">
+                                <h4>Алексей Иванов</h4>
+                                <p>Техническая поддержка</p>
+                                <p><i class="fas fa-phone"></i> +7 (495) 123-45-67 (доб. 201)</p>
+                                <p><i class="fas fa-envelope"></i> support@gritel.com</p>
+                            </div>
+                        </div>
+                        <div class="employee">
+                            <img src="employee4.jpg" alt="Ольга Смирнова">
+                            <div class="employee-info">
+                                <h4>Ольга Смирнова</h4>
+                                <p>Клиентская поддержка</p>
+                                <p><i class="fas fa-phone"></i> +7 (495) 123-45-67 (доб. 202)</p>
+                                <p><i class="fas fa-envelope"></i> o.smirnova@gritel.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-info">
+                    <h2>Остались вопросы?</h2>
+                    <p>Заполните форму обратной связи, и наш специалист свяжется с вами в ближайшее время</p>
+                    <div class="form-contacts">
+                        <p><i class="fas fa-phone-alt"></i> +7 (495) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@gritel.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Рязань, пр-кт Славянский, д. 5</p>
+                    </div>
+                </div>
+                <form class="contact-form" id="feedbackForm" method="POST" action="submit-contact.php">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Тема обращения</label>
+                        <select id="subject" name="subject">
+                            <option value="partnership">Партнерство</option>
+                            <option value="support">Техническая поддержка</option>
+                            <option value="delivery">Вопрос по доставке</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <img src="logo-white.png" alt="ГриТел Логотип" class="footer__logo">
+                    <p>© 2025 ГриТел. Все права защищены.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Контакты</h4>
+                    <p>info@gritel.com</p>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>г. Рязань, пр-кт Славянский, д. 5</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Для партнеров</h4>
+                    <ul>
+                        <li><a href="support.html">Поддержка</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="auth.js"></script>
+
+</body>
+</html>

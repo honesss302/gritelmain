@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Профиль — ГриТел</title>
+  <link rel="stylesheet" href="indexx.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .main {
+      flex: 1;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: #f0f4f8;
+    }
+
+    .profile-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .profile-container h2 {
+      margin-bottom: 24px;
+      color: #1d3557;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .profile-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1d3557;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .alert {
+      background: #d4edda;
+      color: #155724;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .alert button {
+      background: none;
+      border: none;
+      color: #155724;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .footer__subscribe {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .footer__subscribe input[type="email"] {
+      flex: 1;
+      padding: 14px;
+      border-radius: 14px 0 0 14px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .footer__subscribe button {
+      background-color: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 0 14px 14px 0;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .header__auth {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="logo.png" alt="ГриТел Логотип">
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="partners.html">Партнерам</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header__auth">
+          <div id="user-profile">
+            <a href="profile.html" class="btn btn-profile">Профиль</a>
+            <button class="btn btn-logout" onclick="logout()">Выйти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Основная часть -->
+  <main class="main">
+    <div class="profile-container">
+      <div id="alert" class="alert" style="display: none;">
+        Данные успешно обновлены
+        <button onclick="closeAlert()">×</button>
+      </div>
+      <h2>Настройки профиля</h2>
+      <form action="profile.php" method="POST">
+        <div class="form-group">
+          <label for="email">Новая почта</label>
+          <input type="email" id="email" name="email" placeholder="Введите новую почту" />
+        </div>
+        <div class="form-group">
+          <label for="password">Новый пароль</label>
+          <input type="password" id="password" name="password" placeholder="Введите новый пароль" />
+        </div>
+        <button type="submit" class="profile-button">Сохранить изменения</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <img src="logo-white.png" alt="ГриТел Логотип" class="footer__logo" width="42" height="64">
+          <p>© 2025 ГриТел. Все права защищены.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Контакты</h4>
+          <p>info@gritel.com</p>
+          <p>+7 (495) 123-45-67</p>
+          <p>г. Рязань, пр-кт Славянский, д. 5</p>
+        </div>
+        <div class="footer__col">
+          <h4>Для партнеров</h4>
+          <ul>
+
+            <li><a href="support.html">Поддержка</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипт -->
+  <script>
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'index.html';
+    }
+
+    // Отображение уведомления
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('updated') === 'true') {
+        document.getElementById('alert').style.display = 'flex';
+      }
+    });
+
+    function closeAlert() {
+      document.getElementById('alert').style.display = 'none';
+    }
+
+    // Проверка авторизации
+    if (localStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+</body>
+</html>
